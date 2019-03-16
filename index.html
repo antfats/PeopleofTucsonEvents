@@ -1,17 +1,13 @@
 <html class="" lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>POTE</title>
   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <meta class="foundation-mq">
 </head>
-
 <body>
-
   <div class="top-bar">
     <div class="top-bar-left">
       <ul class="menu">
@@ -27,7 +23,6 @@
       </ul>
     </div>
   </div>
-
   <div class="callout large primary">
     <div class="row column text-center">
       <h1>Events</h1>
@@ -51,7 +46,6 @@
       </div>
       <div class="blog-post">
         <h3>Awesome blog post title <small>3/6/2015</small></h3>
-
         <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue.
           Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio
           ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget
@@ -78,7 +72,6 @@
       </div>
       <div class="blog-post">
         <h3>Awesome blog post title <small>3/6/2015</small></h3>
-
         <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue.
           Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio
           ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget
@@ -96,8 +89,6 @@
       <div class="sticky is-at-top is-stuck" data-sticky="e1fpku-sticky" data-anchor="content"
         data-resize="xlmsnw-sticky" data-events="resize"
         style="max-width: 269.5px; margin-top: 1em; top: 0px; bottom: auto; left: 868.5px;">
-
-
         <h4>Categories</h4>
         <ul>
           <li><a href="#">Music</a></li>
@@ -127,7 +118,7 @@
            </tr>
          </table>
        </div>
-        
+       
       </div>
     </div>
   </div>
@@ -137,16 +128,23 @@
   <div id="formContainer">
     <form>
       <div class="form-group">
-        <label for="employee-name-input"> Event Name </label>
-        <input class="form-control" id="employee-name-input" placeholder="BBQ Cookoff!" type="text">
+        <label for="event-name-input"> Event Name </label>
+        <input class="form-control" id="event-name-input" placeholder="BBQ Cookoff!" type="text">
       </div>
       <div class="form-group">
-        <label for="role-input"> Date </label>
-        <input class="form-control" id="role-input" placeholder="03/16/2019" type="text">
+        <label for="event-description-input"> Description </label>
+        <input class="form-control" id="event-description-input" placeholder="taste BBQ!" type="text">
+      </div>
+      <div class="form-group">
+        <label for="date-input"> Date </label>
+        <input class="form-control" id="date-input" placeholder="03/16/2019" type="text">
       </div>
       <div class="form-group">
         <label for="start-input"> Location </label>
-        <input class="form-control" id="start-input" placeholder="1955 E 6th St, Tucson, AZ 85710" type="text">
+        <input class="form-control" id="userAddress" placeholder="1955 E 6th St" type="text">
+        <input class="form-control" id="userCity" placeholder="Tucson" type="text">
+        <input class="form-control" id="userState" placeholder="AZ" type="text">
+        <input class="form-control" id="userZipcode" placeholder="85710" type="text">
       </div>
       <div class="form-group">
         <label for="Categories">Category</label>
@@ -159,16 +157,14 @@
           <option value="Kids"> Kids</option>
         </select>
       </div>
-      <button class="btn btn-primary float-right" id="add-event-btn">Submit</button>
+      <button class="btn btn-primary float-right" id="add-employee-btn">Submit</button>
     </form>
   </div>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  
   <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
   <script>
     $(document).foundation();
   </script>
-
-
 </body>
-
 </html>
