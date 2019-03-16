@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>API Practice</title>
+    <link rel="icon" href="http://clipart-library.com/images/rcnKrpndi.jpg">
+
+    <!-- Link Bootstrap for Leafletjs -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+
+    <!-- Leafletjs javascript -->
+
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
+
+   <!-- My Stylesheet -->
+
+  
+   <style>
+        #mapid { height: 300px; 
+                width: 300px;
+                margin-top: 20px;
+  }
+    #TestDiv{
+
+    visibility: hidden;
+
+}
+        </style>
+
+   <!-- jQuery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+   
+
+</head>
+<body>
+
+    <br>
+    <p>Enter the latitude and longitude of a location!</p>
+
+    <p>The Tucson Airport is at lat 32.1145, long -110.9392</p>
+
+    <form action="/action_page.php">
+       Event Name: <input type="text" id="eventName"></input>
+        <br><br>
+        Latitude: <input type="number"  id="userLatitude"></input>
+        Longitude: <input type="number"  id="userLongitude"></form></inout>
+      </form>
+
+      <br>
+    <button type="button" id="ajax_call_btn">Submit!</button>
+    <br>
+    <button type="button" id="append_map_btn">Append Map?</button>
+
+    <div id="TestDiv">
+    <div id="mapid" ></div>
+    
+    </div>
+
+
+    <!-- Add jQuery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+    var userLatitude = "";
+    var userLongitude= "";
+    var eventName = "";
+
+    
+  
+    
+
+    var mymap = L.map('mapid').setView([32.2226, -110.95], 12);
+
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoicnlhbmdyYWR5MjUwIiwiYSI6ImNqdGF1anp2bjBleTM0N29pOGU3bzRldTEifQ.i3WNwmydXC87WBE61bojkg'
+}).addTo(mymap);
+
+
+
+  $("#ajax_call_btn").click(function () {
+
+  $("#TestDiv").attr("style","visibility: visible");
+   
+    userLatitude = $("#userLatitude").val();
+    userLongitude= $("#userLongitude").val();
+    eventName = $("#eventName").val();
+    
+   console.log(userLatitude);
+   console.log(userLongitude);
+   console.log(eventName);
+
+  
+
+var marker = L.marker([userLatitude, userLongitude]).addTo(mymap);
+
+
+
+
+marker.bindPopup("<b>"+eventName+"</b>").openPopup();
+
+
+
+    
+
+  });
+
+  $("#append_map_btn").click(function () {
+
+
+
+
+
+    var marker = L.marker([userLatitude, userLongitude]).addTo(mymap);
+
+marker.bindPopup("<b>Your Event!</b>").openPopup();
+
+});
+  
+  </script>
+    
+</body>
+</html>
