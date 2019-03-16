@@ -50,8 +50,10 @@
     <form action="/action_page.php">
        Event Name: <input type="text" id="eventName"></input>
         <br><br>
-        Latitude: <input type="number"  id="userLatitude"></input>
-        Longitude: <input type="number"  id="userLongitude"></form></inout>
+        Address: <input type="text"  id="userAddress"></input>
+        City: <input type="text"  id="userCity"></input>
+        State: <input type="text"  id="userState"></input>
+        Zipcode: <input type="number"  id="userZipcode"></input>
       </form>
 
       <br>
@@ -74,7 +76,8 @@
     var userLongitude= "";
     var eventName = "";
 
-    
+    var eventLatitude = 0;
+    var eventLongitude = 0;
   
     
 
@@ -89,8 +92,33 @@
 }).addTo(mymap);
 
 
+//On Submit button click
 
   $("#ajax_call_btn").click(function () {
+
+//Use Ajax to convert address to GPS coordinates
+
+var userAddress = $("#userAddress").val();
+var userCity = $("#userCity").val();
+var userState = $("#userState").val();
+var userZipcode = $("#userZipcode").val();
+
+
+var addressURL = "https://api.opencagedata.com/geocode/v1/json?key=5936bf3355354b28bedf111b0c40104c&q="+userAddress+" "+userCity+" "+userState+" "+userZipcode+"&pretty=1";
+
+    $.ajax({
+   method: "GET",
+   url: addressURL,
+
+}).then(function (response) {
+  
+  eventLatitude = response.results[1].geometry.lat;
+  eventLongitude = response.results[1].geometry.lng;
+
+
+
+
+//Push the GPS coordinates to the map
 
   $("#TestDiv").attr("style","visibility: visible");
    
@@ -98,13 +126,11 @@
     userLongitude= $("#userLongitude").val();
     eventName = $("#eventName").val();
     
-   console.log(userLatitude);
-   console.log(userLongitude);
-   console.log(eventName);
+  
 
   
 
-var marker = L.marker([userLatitude, userLongitude]).addTo(mymap);
+var marker = L.marker([eventLatitude, eventLongitude]).addTo(mymap);
 
 
 
@@ -113,13 +139,13 @@ marker.bindPopup("<b>"+eventName+"</b>").openPopup();
 
 
 
-    
+});
 
   });
 
   $("#append_map_btn").click(function () {
 
-
+    
 
 
 
