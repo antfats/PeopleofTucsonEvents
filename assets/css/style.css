@@ -9,3 +9,6 @@ padding-bottom: 60px;
 #add-event-btn {
     position: absolute;
 }
+.btn {
+    margin: 5px
+}
