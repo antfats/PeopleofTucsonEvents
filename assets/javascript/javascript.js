@@ -35,7 +35,48 @@ $.ajax({
 
     var dayOneWeather = $("<p>").append("High: " + dayFiveMax + "Min: " + dayFiveMin);
     $("#dayFive").append(dayOneWeather);
-
-
-
 });
+
+
+
+
+//Firebase 
+var config = {
+    apiKey: "AIzaSyCeCpOaBk-68HiFXTZAuY6mJadCHh88v28",
+    authDomain: "groupprojectone-924a1.firebaseapp.com",
+    databaseURL: "https://groupprojectone-924a1.firebaseio.com",
+    projectId: "groupprojectone-924a1",
+    storageBzucket: "groupprojectone-924a1.appspot.com",
+    messagingSenderId: "64898286191"
+};
+firebase.initializeApp(config);
+var database = firebase.database();
+//Firebase
+
+$("#add-employee-btn").click(function (event) {
+    event.preventDefault();
+
+    //storing the information the user inputs
+    var newEvent = {
+         eventName: $("#event-name-input").val().trim(),
+         eventDesc: $("#event-description-input").val().trim(),
+         eventDate: $("#date-input").val().trim(),
+         eventAdress: $("#userAddress").val().trim(),
+         eventCity:$("#userCity").val().trim(),
+         eventStat:$("#userState").val().trim(),
+         eventZip:$("#userZipcode").val().trim(),
+         category:$("#Categories").val().trim()
+}
+//Put the new information in the firebase
+database.ref().push(newEvent);
+//Clears the input fields
+$("#event-name-input").val("");
+$("#event-description-input").val("");
+$("#date-input").val("");
+$("#userAddress").val("");
+$("#userCity").val("");
+$("#userState").val("");
+$("#userZipcode").val("");
+$("#Categories").val("");
+
+})
