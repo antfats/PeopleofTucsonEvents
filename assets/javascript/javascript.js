@@ -53,30 +53,61 @@ firebase.initializeApp(config);
 var database = firebase.database();
 //Firebase
 
-$("#add-employee-btn").click(function (event) {
+$("#add-event-button").click(function (event) {
     event.preventDefault();
 
     //storing the information the user inputs
     var newEvent = {
-         eventName: $("#event-name-input").val().trim(),
-         eventDesc: $("#event-description-input").val().trim(),
-         eventDate: $("#date-input").val().trim(),
-         eventAdress: $("#userAddress").val().trim(),
-         eventCity:$("#userCity").val().trim(),
-         eventStat:$("#userState").val().trim(),
-         eventZip:$("#userZipcode").val().trim(),
-         category:$("#Categories").val().trim()
-}
-//Put the new information in the firebase
-database.ref().push(newEvent);
-//Clears the input fields
-$("#event-name-input").val("");
-$("#event-description-input").val("");
-$("#date-input").val("");
-$("#userAddress").val("");
-$("#userCity").val("");
-$("#userState").val("");
-$("#userZipcode").val("");
-$("#Categories").val("");
-
+        eventName: $("#event-name-input").val().trim(),
+        eventDesc: $("#event-description-input").val().trim(),
+        eventDate: $("#date-input").val().trim(),
+        eventAdress: $("#userAddress").val().trim(),
+        eventCity: $("#userCity").val().trim(),
+        eventStat: $("#userState").val().trim(),
+        eventZip: $("#userZipcode").val().trim(),
+        category: $("#Categories").val().trim()
+    }
+    //Put the new information in the firebase
+    database.ref().push(newEvent);
+    //Clears the input fields
+    $("#event-name-input").val("");
+    $("#event-description-input").val("");
+    $("#date-input").val("");
+    $("#userAddress").val("");
+    $("#userCity").val("");
+    $("#userState").val("");
+    $("#userZipcode").val("");
+    $("#Categories").val("");
 })
+//Whenever anything gets added to the database 
+database.ref().on("child_added", function (childSnapshot) {
+    var evName = childSnapshot.val().eventName;
+    var evDate = childSnapshot.val().eventDate;
+    var evDesc = childSnapshot.val().eventDesc;
+    var adress = childSnapshot.val().eventAdress;
+
+   console.log(adress);
+   
+    var eventDiv = $("<div>");
+    var eventPlace = $("<h4>");
+    var nameHead = $("<h3>");
+    var description = $("<p>");
+    var date= $("<small>");
+    eventPlace.text(adress);
+
+    date.text(evDate);
+    nameHead.text(evName);
+    nameHead.append(date);
+    description.text(evDesc);
+    nameHead.append(date);
+
+    nameHead.append(date)   
+    eventDiv.append(nameHead);
+    eventDiv.append(eventPlace); 
+    eventDiv.append(description);
+    // eventDiv.append(date);
+
+
+    $(".event-update").append(eventDiv);
+})
+
