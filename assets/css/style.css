@@ -12,3 +12,14 @@ padding-bottom: 60px;
 .btn {
     margin: 5px
 }
+
+.stickyDiv{
+
+    position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-left: 50px;
+  font-size: 20px;
+  
+}
