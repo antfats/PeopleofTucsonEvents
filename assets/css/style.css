@@ -12,3 +12,23 @@ padding-bottom: 60px;
 .btn {
     margin: 5px
 }
+.stickyDiv{
+
+    position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-left: 50px;
+  font-size: 20px;
+ 
+ }
+ #bgImg {
+     background-image: url("../images/eventsheader.jpg");
+     height: 150px;
+    
+
+ /* Center and scale the image nicely */
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: auto 100%;
+ }
