@@ -32,3 +32,9 @@ padding-bottom: 60px;
  background-repeat: no-repeat;
  background-size: auto 100%;
  }
+
+ #mapid {
+    height: 300px;
+    width: 300px;
+    margin-top: 20px;
+  }

@@ -9,7 +9,22 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <meta class="foundation-mq">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  
+
+  <!-- Link Bootstrap for Leafletjs -->
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="" />
+
+  <!-- Leafletjs javascript -->
+
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 
 <body>
@@ -38,6 +53,8 @@
     <div class="medium-8 columns">
       <div class="event-update">
         <h3>Event Name <small>3/6/2015</small></h3>
+        <b>3111 East 4th Street</b> <br> <b>Tucson</b> <b>AZ</b> <b>85716</b> <br>
+        <button type= "button" class="btn btn-primary" id="map-display-btn">Show On Map</button>
         <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue.
           Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio
           ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget
@@ -48,58 +65,19 @@
           </ul>
         </div>
       </div>
-      <div class="event-update">
-        <h3>Event Name <small>3/6/2015</small></h3>
-        <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue.
-          Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio
-          ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget
-          luctus.</p>
-        <div class="callout">
-          <ul class="menu simple">
-            <li><a href="#">Comments: 3</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="event-update">
-        <h3>Event Name <small>3/6/2015</small></h3>
-        <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue.
-          Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio
-          ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget
-          luctus.</p>
-        <div class="callout">
-          <ul class="menu simple">
-            <li><a href="#">Comments: 3</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="event-update">
-        <h3>Event Name <small>3/6/2015</small></h3>
-        <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue.
-          Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio
-          ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget
-          luctus.</p>
-        <div class="callout">
-          <ul class="menu simple">
-            <li><a href="#">Comments: 3</a></li>
-          </ul>
-        </div>
-      </div>
+     
     </div>
     <!--scroll container-->
     <div class="medium-3 columns sticky-container" data-sticky-container="" style="height: 318px;">
       <div class="stickyDiv" data-sticky="e1fpku-sticky" data-anchor="content"
         data-resize="xlmsnw-sticky" data-events="resize"
         style="max-width: 269.5px; margin-top: 1em; top: 0px; bottom: auto; left: 868.5px;">
-        <h4>Categories</h4>
-        <ul>
-        <ul><button class="btn btn-primary" id="music-bttn">Music</button></ul>
-        <ul> <button class="btn btn-primary" id="sports-bttn">Sports</button></ul>
-        <ul> <button class="btn btn-primary" id="outdoors-bttn">Outdoors</button></ul>
-        <ul><button class="btn btn-primary" id="foodies-bttn">Foodies</button></ul>
-        <ul><button class="btn btn-primary" id="arts/theater-bttn">Arts/Theater</button></ul>
-        <ul><button class="btn btn-primary" id="kids-bttn">Kids</button></ul>
-        </ul>
-        <h4>Map and Weather of Tucson</h4>
+        <h4>Map</h4>
+        <div id="mapDiv">
+          <div id="mapid"></div>
+      
+        </div>
+        <h4>Weather</h4>
         <div id="mapHere"></div>
         <div id="weatherForcast">
           <table>
@@ -119,6 +97,17 @@
             </tr>
           </table>
         </div>
+       
+        <h4>Categories</h4>
+        <ul>
+        <ul><button class="btn btn-primary" id="music-bttn">Music</button></ul>
+        <ul> <button class="btn btn-primary" id="sports-bttn">Sports</button></ul>
+        <ul> <button class="btn btn-primary" id="outdoors-bttn">Outdoors</button></ul>
+        <ul><button class="btn btn-primary" id="foodies-bttn">Foodies</button></ul>
+        <ul><button class="btn btn-primary" id="arts/theater-bttn">Arts/Theater</button></ul>
+        <ul><button class="btn btn-primary" id="kids-bttn">Kids</button></ul>
+        </ul>
+    
 
       </div>
     </div>
@@ -158,7 +147,7 @@
           <option value="Kids"> Kids</option>
         </select>
       </div>
-      <button class="btn btn-primary float-right" id="add-event-button">Submit</button>
+      <button type="button" class="btn btn-primary float-right" id="add-event-button">Submit</button>
     </form>
   </div>
 
@@ -166,6 +155,7 @@
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
   <script src="assets/javascript/javascript.js"></script>
+  <script src="assets/javascript/MapJavascript.js"></script>
   <script>
     $(document).foundation();
   </script>
