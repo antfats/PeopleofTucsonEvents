@@ -36,8 +36,11 @@ padding-bottom: 60px;
  /* Center and scale the image nicely */
  background-position: center;
  background-repeat: no-repeat;
- background-size: cover;
+ background-size: auto 100%;
  }
-.sticky-container {
-    float: right;
-}
+
+ #mapid {
+    height: 300px;
+    width: 300px;
+    margin-top: 20px;
+  }
