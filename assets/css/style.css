@@ -1,3 +1,8 @@
+.event-update {
+    margin-left: 10px;
+}
+
+
 
 #formContainer {
  border: 1px solid black;
@@ -23,12 +28,16 @@ padding-bottom: 60px;
  
  }
  #bgImg {
-     background-image: url("../images/eventsheader.jpg");
-     height: 150px;
+     background-image: url("../images/eventsheader-1.jpg");
+     background-image: 100%;
+     width: 100%;
     
 
  /* Center and scale the image nicely */
  background-position: center;
  background-repeat: no-repeat;
- background-size: auto 100%;
+ background-size: cover;
  }
+.sticky-container {
+    float: right;
+}
