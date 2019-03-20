@@ -101,7 +101,7 @@ database.ref().on("child_added", function (childSnapshot) {
     description.text(evDesc);
     nameHead.append(date);
 
-    nameHead.append(date)
+    nameHead.append(date)   
     eventDiv.append(nameHead);
     eventDiv.append(eventPlace); 
     eventDiv.append(description);
