@@ -6,10 +6,10 @@
   <title>POTE</title>
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <meta class="foundation-mq">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
@@ -28,9 +28,9 @@
       </ul>
     </div>
   </div>
-  <div class="callout large primary">
+  <div class="callout large primary" id="bgImg">
     <div class="row column text-center">
-      <h1>Events</h1>
+      <div> </div>
     </div>
   </div>
   <div class="row" id="content">
@@ -87,17 +87,17 @@
     </div>
     <!--scroll container-->
     <div class="medium-3 columns sticky-container" data-sticky-container="" style="height: 318px;">
-      <div class="stickyDiv  " data-sticky="e1fpku-sticky" data-anchor="content"
+      <div class="stickyDiv" data-sticky="e1fpku-sticky" data-anchor="content"
         data-resize="xlmsnw-sticky" data-events="resize"
         style="max-width: 269.5px; margin-top: 1em; top: 0px; bottom: auto; left: 868.5px;">
         <h4>Categories</h4>
         <ul>
-          <li><button class="btn btn-primary" id="music-bttn">Music</button></li>
-          <li><button class="btn btn-primary" id="sports-bttn">Sports</button></li>
-          <li><button class="btn btn-primary" id="outdoors-bttn">Outdoors</button></li>
-          <li><button class="btn btn-primary" id="foodies-bttn">Foodies</button></li>
-          <li><button class="btn btn-primary" id="arts/theater-bttn">Arts/Theater</button></li>
-          <li><button class="btn btn-primary" id="kids-bttn">Kids</button></li>
+        <ul><button class="btn btn-primary" id="music-bttn">Music</button></ul>
+        <ul> <button class="btn btn-primary" id="sports-bttn">Sports</button></ul>
+        <ul> <button class="btn btn-primary" id="outdoors-bttn">Outdoors</button></ul>
+        <ul><button class="btn btn-primary" id="foodies-bttn">Foodies</button></ul>
+        <ul><button class="btn btn-primary" id="arts/theater-bttn">Arts/Theater</button></ul>
+        <ul><button class="btn btn-primary" id="kids-bttn">Kids</button></ul>
         </ul>
         <h4>Map and Weather of Tucson</h4>
         <div id="mapHere"></div>
@@ -158,7 +158,7 @@
           <option value="Kids"> Kids</option>
         </select>
       </div>
-      <button class="btn btn-primary float-right" id="add-employee-btn">Submit</button>
+      <button class="btn btn-primary float-right" id="add-event-button">Submit</button>
     </form>
   </div>
 
