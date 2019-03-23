@@ -31,7 +31,7 @@
   <div class="top-bar">
     <div class="top-bar-left">
       <ul class="menu">
-        <li class="menu-text">People of Tucson</li>
+        <li class="menu-text">People of Tucson Events</li>
       </ul>
     </div>
     <div class="top-bar-right">
@@ -51,25 +51,30 @@
     <!--event upload-->
     <div class="medium-8 columns">
       <div class="event-update" id="content">
-        <div class="callout">
-          <ul class="menu simple">
-            <li><a href="#">Comments: 3</a></li>
-          </ul>
-        </div>
       </div>
-     
     </div>
     <!--events upload-->
 
     <!--catergories and map weather div-->
-    <div class="medium-3 columns sticky-container" data-sticky-container="" style="height: 318px;">
+    <div class="medium-4 columns sticky-container" data-sticky-container="" style="height: 318px;">
       <div class="stickyDiv" data-sticky="e1fpku-sticky" data-anchor="content"
         data-resize="xlmsnw-sticky" data-events="resize"
         style="max-width: 269.5px; margin-top: 1em; top: 0px; bottom: auto; left: 868.5px;">
+
+        <h4>Categories</h4>
+        <ul>
+        <ul><button class="btn btn-primary" id="music-bttn">Music</button></ul>
+        <ul> <button class="btn btn-primary" id="sports-bttn">Sports</button></ul>
+        <ul> <button class="btn btn-primary" id="outdoors-bttn">Outdoors</button></ul>
+        <ul><button class="btn btn-primary" id="foodies-bttn">Foodies</button></ul>
+        <ul><button class="btn btn-primary" id="arts/theater-bttn">Arts/Theater</button></ul>
+        <ul><button class="btn btn-primary" id="kids-bttn">Kids</button></ul>
+        </ul>
+        <br><br>
         <h4>Map</h4>
         <div id="mapDiv">
           <div id="mapid"></div>
-      
+        <br><br>  
         </div>
         <h4>Weather</h4>
         <div id="mapHere"></div>
@@ -92,15 +97,7 @@
           </table>
         </div>
        
-        <h4>Categories</h4>
-        <ul>
-        <ul><button class="btn btn-primary" id="music-bttn">Music</button></ul>
-        <ul> <button class="btn btn-primary" id="sports-bttn">Sports</button></ul>
-        <ul> <button class="btn btn-primary" id="outdoors-bttn">Outdoors</button></ul>
-        <ul><button class="btn btn-primary" id="foodies-bttn">Foodies</button></ul>
-        <ul><button class="btn btn-primary" id="arts/theater-bttn">Arts/Theater</button></ul>
-        <ul><button class="btn btn-primary" id="kids-bttn">Kids</button></ul>
-        </ul>
+
     
 
       </div>
@@ -147,6 +144,12 @@
       <button type="button" class="btn btn-primary float-right" id="add-event-button">Submit</button>
     </form>
   </div>
+
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <span class="text-muted"></span>
+    </div>
+  </footer>
 <!-- Entry Form -->  
 
   <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>

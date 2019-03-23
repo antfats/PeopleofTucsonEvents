@@ -1,15 +1,24 @@
+.top-bar {
+    background-color: orange;
+}
+
+
+
+
 .event-update {
-    margin-left: 10px;
+    margin: 50px;
+    border: 5px solid black;
+    padding: 25px;
 }
 
 
 
 #formContainer {
- border: 1px solid black;
- width: 60%;
-margin: 50px;
-padding: 25px;
-padding-bottom: 60px;
+    border: 5px solid black;
+    width: 60%;
+    margin: 50px;
+    padding: 25px;
+    padding-bottom: 60px;
 }
 #add-event-btn {
     position: absolute;
@@ -18,29 +27,32 @@ padding-bottom: 60px;
     margin: 5px
 }
 .stickyDiv{
-
+ 
     position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  margin-left: 50px;
-  font-size: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-size: 20px;
+    padding: 20px;
  
  }
  #bgImg {
-     background-image: url("../images/eventsheader-1.jpg");
-     background-image: 100%;
-     width: 100%;
-    
+    background-image: url("../images/eventsheader.jpg");
+    background-size: contain;
+    background-repeat: repeat;
+ }    
 
- /* Center and scale the image nicely */
- background-position: center;
- background-repeat: no-repeat;
- background-size: auto 100%;
- }
+
 
  #mapid {
     height: 300px;
     width: 300px;
     margin-top: 20px;
   }
+
+.footer {
+    background-image: url("../images/eventsfooter.jpg");
+    background-size: contain;
+    background-repeat: repeat;
+
+}
